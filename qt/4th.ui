@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1314</width>
-    <height>771</height>
+    <width>1327</width>
+    <height>772</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -313,93 +313,11 @@ QLineEdit{
         </widget>
        </item>
        <item>
-        <widget class="QStackedWidget" name="stackedWidget">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
+        <widget class="QWidget" name="widget" native="true">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
          </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <widget class="QWidget" name="dashboard">
-          <property name="sizeIncrement">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="label_3">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_7">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="search">
-          <widget class="QLabel" name="label_4">
-           <property name="geometry">
-            <rect>
-             <x>420</x>
-             <y>220</y>
-             <width>161</width>
-             <height>151</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>SEARCH</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="notification">
-          <widget class="QLabel" name="label_5">
-           <property name="geometry">
-            <rect>
-             <x>450</x>
-             <y>270</y>
-             <width>221</width>
-             <height>101</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Notification</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="settings">
-          <widget class="QLabel" name="label_6">
-           <property name="geometry">
-            <rect>
-             <x>550</x>
-             <y>300</y>
-             <width>101</width>
-             <height>111</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>SETTINGS</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="logout">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-         </widget>
         </widget>
        </item>
       </layout>
@@ -619,7 +537,7 @@ QPushButton:checked
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1314</width>
+     <width>1327</width>
      <height>26</height>
     </rect>
    </property>

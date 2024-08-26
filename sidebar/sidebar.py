@@ -1,28 +1,41 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5 import QtWidgets
 from ui_sidebar import Ui_MainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
+import sys
 
-class SidebarApp(QtWidgets.QMainWindow):
+from dashboard import Ui_Dashboard, CameraThread
+
+class SidebarApp(QMainWindow, Ui_MainWindow):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.setupUi(self)
+
+        # Debug prints
+        print("UI setup complete")
+        self.dashboard_btn1.clicked.connect(self.open_dashboard)
+
+    def open_dashboard(self):
+        print("Dashboard button clicked")
+        self.dashboard_window = DashboardWindow()
+        self.dashboard_window.show()
+
+class DashboardWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_Dashboard()
         self.ui.setupUi(self)
-        self.setup_connections()
-        # self.icons_names.setHidden(True)
 
-    def setup_connections(self):
-        self.ui.dashboard_btn2.clicked.connect(lambda: self.change_stack_index(0))
-        self.ui.search_btn2.clicked.connect(lambda: self.change_stack_index(1))
-        self.ui.notification_2.clicked.connect(lambda: self.change_stack_index(2))
-        self.ui.settings_2.clicked.connect(lambda: self.change_stack_index(3))
-        self.ui.pushButton_11.clicked.connect(lambda: self.change_stack_index(4))
-        
-        self.ui.dashboard_btn1.clicked.connect(lambda: self.change_stack_index(0))
-        self.ui.search_btn1.clicked.connect(lambda: self.change_stack_index(1))
-        self.ui.notification_1.clicked.connect(lambda: self.change_stack_index(2))
-        self.ui.settings_1.clicked.connect(lambda: self.change_stack_index(3))
-        self.ui.pushButton_11.clicked.connect(lambda: self.change_stack_index(4))
+        self.ui.camera_thread1 = CameraThread(0)  # Camera index 0
+        self.ui.camera_thread2 = CameraThread(1)  # Camera index 1
+        self.ui.camera_thread1.change_pixmap_signal.connect(self.ui.update_camera_widget1)
+        self.ui.camera_thread2.change_pixmap_signal.connect(self.ui.update_camera_widget2)
+        self.ui.camera_thread1.start()
+        self.ui.camera_thread2.start()
 
-
-    def change_stack_index(self, index):
-        self.ui.stackedWidget.setCurrentIndex(index)
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = SidebarApp()
+    window.show()
+    sys.exit(app.exec_())

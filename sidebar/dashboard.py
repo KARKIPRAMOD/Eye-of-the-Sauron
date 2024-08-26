@@ -1,7 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QImage, QPixmap
 import cv2
-import sys
 
 class Ui_Dashboard(object):
     def setupUi(self, Dashboard):
@@ -34,7 +33,6 @@ class Ui_Dashboard(object):
         self.retranslateUi(Dashboard)
         QtCore.QMetaObject.connectSlotsByName(Dashboard)
 
-        # Start the camera feeds
         self.camera_thread1 = CameraThread(0)  # Camera index 0
         self.camera_thread2 = CameraThread(1)  # Camera index 1
         self.camera_thread1.change_pixmap_signal.connect(self.update_camera_widget1)
@@ -52,10 +50,8 @@ class Ui_Dashboard(object):
     def update_camera_widget2(self, qt_img):
         self.camera_widget2.setPixmap(qt_img)
 
-from PyQt5.QtCore import QThread, pyqtSignal
-
-class CameraThread(QThread):
-    change_pixmap_signal = pyqtSignal(QPixmap)
+class CameraThread(QtCore.QThread):
+    change_pixmap_signal = QtCore.pyqtSignal(QPixmap)
 
     def __init__(self, camera_index):
         super().__init__()
@@ -79,11 +75,3 @@ class CameraThread(QThread):
     def stop(self):
         self.cap.release()
         cv2.destroyAllWindows()
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    Dashboard = QtWidgets.QMainWindow()
-    ui = Ui_Dashboard()
-    ui.setupUi(Dashboard)
-    Dashboard.show()
-    sys.exit(app.exec_())
