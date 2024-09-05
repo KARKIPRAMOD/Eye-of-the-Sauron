@@ -20,6 +20,69 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
+        self.main_meun = QtWidgets.QWidget(self.centralwidget)
+        self.main_meun.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 0, 0);")
+        self.main_meun.setObjectName("main_meun")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.main_meun)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.header = QtWidgets.QWidget(self.main_meun)
+        self.header.setEnabled(True)
+        self.header.setMinimumSize(QtCore.QSize(0, 100))
+        self.header.setMaximumSize(QtCore.QSize(16777215, 100))
+        self.header.setStyleSheet("QWidget{\n"
+"background-color:rgb(0, 0, 0)\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"    color:white\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"    color:white\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:checked\n"
+"{\n"
+"    background_color: #F5FAFE;\n"
+"    color: 1F95EF;\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"    color:white;\n"
+"}")
+        self.header.setObjectName("header")
+        self.pushButton_7 = QtWidgets.QPushButton(self.header)
+        self.pushButton_7.setGeometry(QtCore.QRect(10, 30, 131, 41))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pushButton_7.setFont(font)
+        self.pushButton_7.setCheckable(True)
+        self.pushButton_7.setChecked(True)
+        self.pushButton_7.setAutoExclusive(True)
+        self.pushButton_7.setAutoDefault(True)
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.lineEdit = QtWidgets.QLineEdit(self.header)
+        self.lineEdit.setGeometry(QtCore.QRect(310, 20, 251, 61))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setUnderline(False)
+        font.setWeight(75)
+        self.lineEdit.setFont(font)
+        self.lineEdit.setCursorMoveStyle(QtCore.Qt.VisualMoveStyle)
+        self.lineEdit.setObjectName("lineEdit")
+        self.verticalLayout_3.addWidget(self.header)
+        self.widget = QtWidgets.QWidget(self.main_meun)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.widget.setFont(font)
+        self.widget.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);")
+        self.widget.setObjectName("widget")
+        self.verticalLayout_3.addWidget(self.widget)
+        self.gridLayout.addWidget(self.main_meun, 0, 4, 1, 1)
         self.icons_only = QtWidgets.QWidget(self.centralwidget)
         self.icons_only.setMaximumSize(QtCore.QSize(95, 16777215))
         self.icons_only.setStyleSheet("QWidget{\n"
@@ -56,7 +119,7 @@ class Ui_MainWindow(object):
         self.dashboard_btn1.setMinimumSize(QtCore.QSize(60, 60))
         self.dashboard_btn1.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/dashboard.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/camera"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.dashboard_btn1.setIcon(icon)
         self.dashboard_btn1.setIconSize(QtCore.QSize(40, 40))
         self.dashboard_btn1.setCheckable(True)
@@ -79,7 +142,7 @@ class Ui_MainWindow(object):
         self.notification_1.setMinimumSize(QtCore.QSize(60, 60))
         self.notification_1.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/notifications.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/alert.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.notification_1.setIcon(icon2)
         self.notification_1.setIconSize(QtCore.QSize(40, 40))
         self.notification_1.setCheckable(True)
@@ -90,9 +153,9 @@ class Ui_MainWindow(object):
         self.settings_1.setMinimumSize(QtCore.QSize(60, 60))
         self.settings_1.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/settings.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/video.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.settings_1.setIcon(icon3)
-        self.settings_1.setIconSize(QtCore.QSize(30, 30))
+        self.settings_1.setIconSize(QtCore.QSize(40, 40))
         self.settings_1.setCheckable(True)
         self.settings_1.setAutoExclusive(True)
         self.settings_1.setObjectName("settings_1")
@@ -109,56 +172,6 @@ class Ui_MainWindow(object):
         self.signout_1.setObjectName("signout_1")
         self.verticalLayout_2.addWidget(self.signout_1)
         self.gridLayout.addWidget(self.icons_only, 0, 1, 1, 1)
-        self.main_meun = QtWidgets.QWidget(self.centralwidget)
-        self.main_meun.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 0, 0);")
-        self.main_meun.setObjectName("main_meun")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.main_meun)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.header = QtWidgets.QWidget(self.main_meun)
-        self.header.setEnabled(True)
-        self.header.setMinimumSize(QtCore.QSize(0, 100))
-        self.header.setMaximumSize(QtCore.QSize(16777215, 100))
-        self.header.setStyleSheet("QWidget{\n"
-"background-color:rgb(0, 0, 0)\n"
-"}\n"
-"\n"
-"QPushButton{\n"
-"    color:white\n"
-"}\n"
-"\n"
-"QLabel{\n"
-"    color:white\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:checked\n"
-"{\n"
-"    background_color: #F5FAFE;\n"
-"    color: 1F95EF;\n"
-"}\n"
-"\n"
-"QLineEdit{\n"
-"    color:white;\n"
-"}")
-        self.header.setObjectName("header")
-        self.pushButton_7 = QtWidgets.QPushButton(self.header)
-        self.pushButton_7.setGeometry(QtCore.QRect(10, 30, 93, 28))
-        self.pushButton_7.setCheckable(True)
-        self.pushButton_7.setChecked(True)
-        self.pushButton_7.setAutoExclusive(True)
-        self.pushButton_7.setAutoDefault(True)
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.lineEdit = QtWidgets.QLineEdit(self.header)
-        self.lineEdit.setGeometry(QtCore.QRect(380, 20, 141, 41))
-        self.lineEdit.setObjectName("lineEdit")
-        self.verticalLayout_3.addWidget(self.header)
-        self.widget = QtWidgets.QWidget(self.main_meun)
-        self.widget.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);")
-        self.widget.setObjectName("widget")
-        self.verticalLayout_3.addWidget(self.widget)
-        self.gridLayout.addWidget(self.main_meun, 0, 4, 1, 1)
         self.icons_names = QtWidgets.QWidget(self.centralwidget)
         self.icons_names.setMaximumSize(QtCore.QSize(200, 16777215))
         self.icons_names.setStyleSheet("QWidget{\n"
@@ -182,6 +195,7 @@ class Ui_MainWindow(object):
 "    font-weight:bold;\n"
 "}")
         self.icons_names.setHidden(True)
+
         self.icons_names.setObjectName("icons_names")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.icons_names)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -221,7 +235,7 @@ class Ui_MainWindow(object):
         self.settings_2 = QtWidgets.QPushButton(self.icons_names)
         self.settings_2.setMinimumSize(QtCore.QSize(60, 60))
         self.settings_2.setIcon(icon3)
-        self.settings_2.setIconSize(QtCore.QSize(30, 30))
+        self.settings_2.setIconSize(QtCore.QSize(40, 40))
         self.settings_2.setCheckable(True)
         self.settings_2.setAutoExclusive(True)
         self.settings_2.setObjectName("settings_2")
@@ -247,11 +261,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.dashboard_btn1.toggled['bool'].connect(self.dashboard_btn2.setChecked) # type: ignore
         self.search_btn1.toggled['bool'].connect(self.search_btn2.setChecked) # type: ignore
-        self.notification_1.toggled['bool'].connect(self.notification_2.setChecked) # type: ignore
         self.settings_1.toggled['bool'].connect(self.settings_2.setChecked) # type: ignore
         self.dashboard_btn2.toggled['bool'].connect(self.dashboard_btn1.setChecked) # type: ignore
         self.search_btn2.toggled['bool'].connect(self.search_btn1.setChecked) # type: ignore
-        self.notification_2.toggled['bool'].connect(self.notification_1.setChecked) # type: ignore
         self.settings_2.toggled['bool'].connect(self.settings_1.setChecked) # type: ignore
         self.pushButton_7.toggled['bool'].connect(self.icons_only.setHidden) # type: ignore
         self.pushButton_7.toggled['bool'].connect(self.icons_names.setVisible) # type: ignore
@@ -259,6 +271,8 @@ class Ui_MainWindow(object):
         self.pushButton_11.toggled['bool'].connect(self.signout_1.setChecked) # type: ignore
         self.signout_1.toggled['bool'].connect(MainWindow.close) # type: ignore
         self.pushButton_11.toggled['bool'].connect(MainWindow.close) # type: ignore
+        self.notification_1.toggled['bool'].connect(self.notification_2.setChecked) # type: ignore
+        self.notification_2.toggled['bool'].connect(self.notification_1.setChecked) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -266,11 +280,11 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton_7.setText(_translate("MainWindow", "MENU"))
         self.lineEdit.setText(_translate("MainWindow", "EYE OF THE SAURON"))
-        self.dashboard_btn2.setText(_translate("MainWindow", "DASHBOARD"))
-        self.search_btn2.setText(_translate("MainWindow", "SEARCH"))
-        self.notification_2.setText(_translate("MainWindow", "NOTIFICATION"))
-        self.settings_2.setText(_translate("MainWindow", "SETTINGS"))
-        self.pushButton_11.setText(_translate("MainWindow", "SIGN OUT"))
+        self.dashboard_btn2.setText(_translate("MainWindow", "     LIVE"))
+        self.search_btn2.setText(_translate("MainWindow", "     TARGET"))
+        self.notification_2.setText(_translate("MainWindow", "     ALERTS"))
+        self.settings_2.setText(_translate("MainWindow", "     VIDEO"))
+        self.pushButton_11.setText(_translate("MainWindow", "     SIGN OUT"))
 import resource_rc
 
 

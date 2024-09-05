@@ -69,7 +69,7 @@ class FaceRecognitionThread(QThread):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(log_file, mode='a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([self.camera_index, self.person_name, timestamp])
+            writer.writerow([self.camera_index, self.person_name, timestamp,self.image_path])
 
 class Ui_SearchApp(object):
     def setupUi(self, SearchApp):

@@ -1,5 +1,11 @@
 <RCC>
   <qresource>
+    <file>video-removebg-preview.png</file>
+    <file>video.jpg</file>
+    <file>video.png</file>
+    <file>camera</file>
+    <file>camera</file>
+    <file>alert.png</file>
     <file>log_out.png</file>
     <file>dashboard_white.png</file>
     <file>search.png</file>
@@ -13,5 +19,8 @@
     <file>profile_pic.png</file>
     <file>search.png</file>
     <file>settings.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>alert.jpg</file>
   </qresource>
 </RCC>
